@@ -14,9 +14,18 @@ namespace NumberConverter
             {
                 return "I";
             }
+            else if (numberToConvert == 2)
+            {
+                return "II";
+            }
+            else if (numberToConvert == 3)
+            {
+                return "III";
+            }
 
             return "";
 
         }
     }
 }
+
