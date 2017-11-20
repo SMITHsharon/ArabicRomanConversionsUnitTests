@@ -10,21 +10,50 @@ namespace NumberConverter
     {
         public string Convert(int numberToConvert)
         {
-            if (numberToConvert == 1)
+            string romanNumeral = "";
+            string onesChar = "I";
+
+            if (numberToConvert >= 1 && numberToConvert <= 3)
             {
-                return "I";
-            }
-            else if (numberToConvert == 2)
-            {
-                return "II";
-            }
-            else if (numberToConvert == 3)
-            {
-                return "III";
+                romanNumeral = writeOnes(numberToConvert, romanNumeral, onesChar);
             }
 
-            return "";
+            if (numberToConvert == 4)
+            {
+                romanNumeral = "IV";
+            }
 
+            if (numberToConvert == 5)
+            {
+                romanNumeral = "V";
+            }
+
+            if (numberToConvert >= 6 && numberToConvert <= 9)
+            {
+                romanNumeral = writeOnes(numberToConvert - 5, "V", onesChar);
+            }
+
+            if (numberToConvert == 10)
+            {
+                romanNumeral = "X";
+            }
+
+
+
+            return romanNumeral;
+
+        }
+
+        public string writeOnes(int howManyToWrite, string rNumeral, string placeValueChar)
+        {
+            if (howManyToWrite >= 1 && howManyToWrite <= 3)
+            {
+                for (var i = 1; i <= howManyToWrite; i++)
+                {
+                    rNumeral = rNumeral + placeValueChar;
+                }
+            }
+            return rNumeral;
         }
     }
 }
