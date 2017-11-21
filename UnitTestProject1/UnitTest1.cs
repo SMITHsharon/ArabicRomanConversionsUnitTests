@@ -102,5 +102,75 @@ namespace NumberConverter.Test
             //assert
             Assert.AreEqual("X", result);
         }
+
+
+        [TestMethod]
+        public void when_23_is_passed_XXIII_should_be_returned()
+        {
+            //arrange
+            var converter = new RomanNumeralConverter();
+
+            //act
+            var result = converter.Convert(23);
+
+            //assert
+            Assert.AreEqual("XXIII", result);
+        }
+
+
+        [TestMethod]
+        public void when_24_is_passed_XXIV_should_be_returned()
+        {
+            //arrange
+            var converter = new RomanNumeralConverter();
+
+            //act
+            var result = converter.Convert(24);
+
+            //assert
+            Assert.AreEqual("XXIV", result);
+        }
+
+
+        [TestMethod]
+        public void when_49_is_passed_XLIX_should_be_returned()
+        {
+            //arrange
+            var converter = new RomanNumeralConverter();
+
+            //act
+            var result = converter.Convert(49);
+
+            //assert
+            Assert.AreEqual("XLIX", result);
+        }
+
+
+        [TestMethod]
+        public void when_89_is_passed_LXXXIX_should_be_returned()
+        {
+            //arrange
+            var converter = new RomanNumeralConverter();
+
+            //act
+            var result = converter.Convert(89);
+
+            //assert
+            Assert.AreEqual("LXXXIX", result);
+        }
+
+
+        [TestMethod]
+        public void when_99_is_passed_XCIX_should_be_returned()
+        {
+            //arrange
+            var converter = new RomanNumeralConverter();
+
+            //act
+            var result = converter.Convert(99);
+
+            //assert
+            Assert.AreEqual("XCIX", result);
+        }
     }
 }
