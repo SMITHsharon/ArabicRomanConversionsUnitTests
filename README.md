@@ -7,9 +7,9 @@
 
 ### For Arabic to Roman Numeral Conversions
 ## Unit Tests For // All Pass
-* 1 => I
-* 3 => III
-* 4 => IV
+- 1 => I
+- 3 => III
+- 4 => IV
 5 => V
 6 => VI
 8 => VIII
