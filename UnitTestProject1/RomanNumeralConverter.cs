@@ -29,28 +29,30 @@ namespace NumberConverter
             string fiveThousand = "V";
             string nineThousand = "IX";
 
+            int placeValueDigit = 0;
+
             // thousands place
             if (numberToConvert >= 1000 && numberToConvert <= 9999)
             {
-                int thousandsPlace = numberToConvert / 1000;
+                placeValueDigit = numberToConvert / 1000;
                 numberToConvert = numberToConvert % 1000;
-                romanNumeral = writePlaceValue(thousandsPlace, thousandsChar, fourThousand, fiveThousand, nineThousand);
+                romanNumeral = writePlaceValue(placeValueDigit, thousandsChar, fourThousand, fiveThousand, nineThousand);
             }
 
             // hundreds place
             if (numberToConvert >= 100 && numberToConvert <= 999)
             {
-                int hundredsPlace = numberToConvert / 100;
+                placeValueDigit = numberToConvert / 100;
                 numberToConvert = numberToConvert % 100;
-                romanNumeral += writePlaceValue(hundredsPlace, hundredsChar, fourHundred, fiveHundred, nineHundred);
+                romanNumeral += writePlaceValue(placeValueDigit, hundredsChar, fourHundred, fiveHundred, nineHundred);
             }
 
             // tens place
             if (numberToConvert >= 10 && numberToConvert <= 99)
             {
-                int tensPlace = numberToConvert / 10;
+                placeValueDigit = numberToConvert / 10;
                 numberToConvert = numberToConvert % 10;
-                romanNumeral += writePlaceValue(tensPlace, tensChar, forty, fifty, ninety);
+                romanNumeral += writePlaceValue(placeValueDigit, tensChar, forty, fifty, ninety);
             }
 
             // ones place
