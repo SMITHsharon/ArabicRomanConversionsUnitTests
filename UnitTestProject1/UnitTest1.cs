@@ -77,7 +77,7 @@ namespace NumberConverter.Test
 
 
         [TestMethod]
-        public void when_9_is_passed_VIII_should_be_returned()
+        public void when_8_is_passed_VIII_should_be_returned()
         {
             //arrange
             var converter = new RomanNumeralConverter();
