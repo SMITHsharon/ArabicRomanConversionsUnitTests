@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NumberConverter", "NumberConverters\NumberConverter.csproj", "{36F80D0A-EE21-46BC-9909-EF76FE4226AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NumberConverters", "NumberConverters\NumberConverters.csproj", "{36F80D0A-EE21-46BC-9909-EF76FE4226AF}"
 	ProjectSection(ProjectDependencies) = postProject
 		{02D21DF2-2969-41E9-81F4-997AE8158CD1} = {02D21DF2-2969-41E9-81F4-997AE8158CD1}
 	EndProjectSection

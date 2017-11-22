@@ -172,5 +172,103 @@ namespace NumberConverter.Test
             //assert
             Assert.AreEqual("XCIX", result);
         }
+
+
+        [TestMethod]
+        public void when_111_is_passed_CXI_should_be_returned()
+        {
+            //arrange
+            var converter = new RomanNumeralConverter();
+
+            //act
+            var result = converter.Convert(111);
+
+            //assert
+            Assert.AreEqual("CXI", result);
+        }
+
+
+        [TestMethod]
+        public void when_449_is_passed_CDXLIX_should_be_returned()
+        {
+            //arrange
+            var converter = new RomanNumeralConverter();
+
+            //act
+            var result = converter.Convert(449);
+
+            //assert
+            Assert.AreEqual("CDXLIX", result);
+        }
+
+
+        [TestMethod]
+        public void when_984_is_passed_CMLXXXIV_should_be_returned()
+        {
+            //arrange
+            var converter = new RomanNumeralConverter();
+
+            //act
+            var result = converter.Convert(984);
+
+            //assert
+            Assert.AreEqual("CMLXXXIV", result);
+        }
+
+
+        [TestMethod]
+        public void when_999_is_passed_CMXCIX_should_be_returned()
+        {
+            //arrange
+            var converter = new RomanNumeralConverter();
+
+            //act
+            var result = converter.Convert(999);
+
+            //assert
+            Assert.AreEqual("CMXCIX", result);
+        }
+
+
+        [TestMethod]
+        public void when_1000_is_passed_M_should_be_returned()
+        {
+            //arrange
+            var converter = new RomanNumeralConverter();
+
+            //act
+            var result = converter.Convert(1000);
+
+            //assert
+            Assert.AreEqual("M", result);
+        }
+
+
+        [TestMethod]
+        public void when_1066_is_passed_MLXVI_should_be_returned()
+        {
+            //arrange
+            var converter = new RomanNumeralConverter();
+
+            //act
+            var result = converter.Convert(1066);
+
+            //assert
+            Assert.AreEqual("MLXVI", result);
+        }
+
+
+        [TestMethod]
+        public void when_1989_is_passed_MCMLXXXIX_should_be_returned()
+        {
+            //arrange
+            var converter = new RomanNumeralConverter();
+
+            //act
+            var result = converter.Convert(1989);
+
+            //assert
+            Assert.AreEqual("MCMLXXXIX", result);
+        }
     }
 }

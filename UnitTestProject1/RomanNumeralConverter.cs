@@ -19,32 +19,38 @@ namespace NumberConverter
             string forty = "XL";
             string fifty = "L";
             string ninety = "XC";
+            string hundredsChar = "C";
+            string fourHundred = "CD";
+            string fiveHundred = "D";
+            string nineHundred = "CM";
+            string thousandsChar = "M";
+            // the thousands chars would actually appear w a bar above, signifying to mult value by 1000
+            string fourThousand = "IV";
+            string fiveThousand = "V";
+            string nineThousand = "IX";
 
-            /*
-            Dictionary<string, int> dict = new Dictionary<string, int>()
+            // thousands place
+            if (numberToConvert >= 1000 && numberToConvert <= 9999)
             {
-                {"M", 1000},  // 1000 = M
-                {"CM", 900},  // 900 = CM
-                {"D", 500},   // 500 = D
-                {"CD", 400},  // 400 = CD
-                {"C", 100},   // 100 = C
-                {"XC", 90},   // 90 = XC
-                {"L", 50},    // 50 = L
-                {"XL", 40},   // 40 = XL
-                {"X", 10},    // 10 = X
-                {"IX", 9},    // 9 = IX
-                {"V", 5},     // 5 = V
-                {"IV", 4},    // 4 = IV
-                {"I", 1},     // 1 = I
-            };
-            */
+                int thousandsPlace = numberToConvert / 1000;
+                numberToConvert = numberToConvert % 1000;
+                romanNumeral = writePlaceValue(thousandsPlace, thousandsChar, fourThousand, fiveThousand, nineThousand);
+            }
+
+            // hundreds place
+            if (numberToConvert >= 100 && numberToConvert <= 999)
+            {
+                int hundredsPlace = numberToConvert / 100;
+                numberToConvert = numberToConvert % 100;
+                romanNumeral += writePlaceValue(hundredsPlace, hundredsChar, fourHundred, fiveHundred, nineHundred);
+            }
 
             // tens place
             if (numberToConvert >= 10 && numberToConvert <= 99)
             {
                 int tensPlace = numberToConvert / 10;
                 numberToConvert = numberToConvert % 10;
-                romanNumeral = writePlaceValue(tensPlace, tensChar, forty, fifty, ninety);
+                romanNumeral += writePlaceValue(tensPlace, tensChar, forty, fifty, ninety);
             }
 
             // ones place
@@ -61,30 +67,18 @@ namespace NumberConverter
             string onesChar, string fourChar, string fiveChar, string nineChar)
         {
             string rNumeral = "";
+
             if (numToConvert >= 1 && numToConvert <= 3)
-            {
                 rNumeral = writeOnes(numToConvert, rNumeral, onesChar);
-            }
 
-            if (numToConvert == 4)
-            {
-                rNumeral = fourChar;
-            }
+            if (numToConvert == 4) rNumeral = fourChar;
 
-            if (numToConvert == 5)
-            {
-                rNumeral = fiveChar;
-            }
+            if (numToConvert == 5) rNumeral = fiveChar;
 
             if (numToConvert >= 6 && numToConvert <= 9)
-            {
                 rNumeral = writeOnes(numToConvert - 5, fiveChar, onesChar);
-            }
 
-            if (numToConvert == 9)
-            {
-                rNumeral = nineChar;
-            }
+            if (numToConvert == 9) rNumeral = nineChar;
 
             return rNumeral;
         }
