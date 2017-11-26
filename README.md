@@ -26,3 +26,13 @@
 1000 => M  
 1066 => MLXVI  
 1989 => MCMLXXXIX  
+
+## For Roman Numeral to Arabic Conversions
+### Unit Tests For // All Pass
+I => 1
+III => 3
+IV => 4
+V => 5
+VI => 6
+VIII => 8
+IX => 9
