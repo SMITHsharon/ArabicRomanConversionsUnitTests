@@ -36,7 +36,7 @@ namespace NumberConverter
             {
                 placeValueDigit = numberToConvert / 1000;
                 numberToConvert = numberToConvert % 1000;
-                romanNumeral = writePlaceValue(placeValueDigit, thousandsChar, fourThousand, fiveThousand, nineThousand);
+                romanNumeral = WritePlaceValue(placeValueDigit, thousandsChar, fourThousand, fiveThousand, nineThousand);
             }
 
             // hundreds place
@@ -44,7 +44,7 @@ namespace NumberConverter
             {
                 placeValueDigit = numberToConvert / 100;
                 numberToConvert = numberToConvert % 100;
-                romanNumeral += writePlaceValue(placeValueDigit, hundredsChar, fourHundred, fiveHundred, nineHundred);
+                romanNumeral += WritePlaceValue(placeValueDigit, hundredsChar, fourHundred, fiveHundred, nineHundred);
             }
 
             // tens place
@@ -52,33 +52,33 @@ namespace NumberConverter
             {
                 placeValueDigit = numberToConvert / 10;
                 numberToConvert = numberToConvert % 10;
-                romanNumeral += writePlaceValue(placeValueDigit, tensChar, forty, fifty, ninety);
+                romanNumeral += WritePlaceValue(placeValueDigit, tensChar, forty, fifty, ninety);
             }
 
             // ones place
             if (numberToConvert >= 1 && numberToConvert <= 9)
             {
-                romanNumeral += writePlaceValue(numberToConvert, onesChar, four, five, nine);
+                romanNumeral += WritePlaceValue(numberToConvert, onesChar, four, five, nine);
             }
                 return romanNumeral;
             
         }
 
 
-        public string writePlaceValue(int numToConvert, 
+        public string WritePlaceValue(int numToConvert, 
             string onesChar, string fourChar, string fiveChar, string nineChar)
         {
             string rNumeral = "";
 
             if (numToConvert >= 1 && numToConvert <= 3)
-                rNumeral = writeOnes(numToConvert, rNumeral, onesChar);
+                rNumeral = WriteOnes(numToConvert, rNumeral, onesChar);
 
             if (numToConvert == 4) rNumeral = fourChar;
 
             if (numToConvert == 5) rNumeral = fiveChar;
 
             if (numToConvert >= 6 && numToConvert <= 9)
-                rNumeral = writeOnes(numToConvert - 5, fiveChar, onesChar);
+                rNumeral = WriteOnes(numToConvert - 5, fiveChar, onesChar);
 
             if (numToConvert == 9) rNumeral = nineChar;
 
@@ -86,7 +86,7 @@ namespace NumberConverter
         }
 
 
-        public string writeOnes(int howManyToWrite, string rNumeral, string placeValueChar)
+        public string WriteOnes(int howManyToWrite, string rNumeral, string placeValueChar)
         {
             if (howManyToWrite >= 1 && howManyToWrite <= 3)
             {
